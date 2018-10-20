@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOG_FILE" value="./logs/spring.log"/>
+    <property name="LOG_FILE" value="/data/logs/spring.log"/>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
