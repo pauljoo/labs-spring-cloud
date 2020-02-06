@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  info.xpanda.labs.spring.cloud.plugin.user.noop.ext.config.UserConfig
