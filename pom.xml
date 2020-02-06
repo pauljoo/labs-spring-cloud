@@ -4,15 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>info.xpanda.labs</groupId>
-    <artifactId>labs-spring-cloud-admin</artifactId>
+    <groupId>info.xpanda.labs.spring.cloud</groupId>
+    <artifactId>labs-spring-cloud</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
-        <module>labs-spring-cloud-admin-parent</module>
-        <module>labs-spring-cloud-admin-service-system</module>
-        <module>labs-spring-cloud-admin-service-user</module>
-        <module>labs-spring-cloud-admin-registry</module>
+        <module>labs-spring-cloud-parent</module>
+        <module>labs-spring-cloud-service-system</module>
+        <module>labs-spring-cloud-service-user</module>
+        <module>labs-spring-cloud-registry</module>
+        <module>labs-spring-cloud-biz-system</module>
+        <module>labs-spring-cloud-plugin-user-facade</module>
+        <module>labs-spring-cloud-plugin-user-memory</module>
+        <module>labs-spring-cloud-plugin-user-noop</module>
+        <module>labs-spring-cloud-plugin-user-noop-ext</module>
     </modules>
 </project>
