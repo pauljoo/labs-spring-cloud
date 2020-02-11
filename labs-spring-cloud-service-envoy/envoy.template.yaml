@@ -28,10 +28,12 @@ static_resources:
               - match:
                   prefix: "/service-system"
                 route:
+                  prefix_rewrite: "/"
                   cluster: labs_spring_cloud_service_system
               - match:
                   prefix: "/service-user"
                 route:
+                  prefix_rewrite: "/"
                   cluster: labs_spring_cloud_service_user
           http_filters:
           - name: envoy.router
