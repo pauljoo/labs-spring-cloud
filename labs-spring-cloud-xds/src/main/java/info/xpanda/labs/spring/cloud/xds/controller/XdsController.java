@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class XdsController {
     @RequestMapping("/v2/discovery:clusters")
-    public String cluster(@RequestBody String body){
+    public String cluster(@RequestBody(required = false) String body){
         System.out.println(body);
         return "";
     }
