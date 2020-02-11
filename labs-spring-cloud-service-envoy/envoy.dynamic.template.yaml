@@ -10,6 +10,8 @@ dynamic_resources:
     api_config_source:
       api_type: REST
       cluster_names: [xds_cluster]
+      refresh_delay:
+        seconds: 30
 static_resources:
   listeners:
   - name: listener_0
@@ -47,5 +49,4 @@ static_resources:
       connect_timeout: 0.25s
       type: STATIC
       lb_policy: ROUND_ROBIN
-      http2_protocol_options: {}
       hosts: [{ socket_address: { address: 127.0.0.1, port_value: 9090 }}]
