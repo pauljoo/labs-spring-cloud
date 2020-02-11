@@ -34,12 +34,12 @@ static_resources:
                   prefix: "/service-system"
                 route:
                   prefix_rewrite: "/"
-                  cluster: labs_spring_cloud_service_system
+                  cluster: xds_cluster
               - match:
                   prefix: "/service-user"
                 route:
                   prefix_rewrite: "/"
-                  cluster: labs_spring_cloud_service_user
+                  cluster: xds_cluster
           http_filters:
           - name: envoy.router
   clusters:
