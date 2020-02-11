@@ -14,7 +14,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public String info() {
         String info = systemRemoting.info();
-        log.info("System Say: " + info);
-        return info;
+        return "===call sytem response(" + info + ")";
     }
 }
