@@ -18,12 +18,14 @@ public class EnvoyServiceImpl implements EnvoyService {
 
     @Override
     public String user() {
+        System.out.println(path + "/service-user/user/info");
         String info = restTemplate.getForObject(path + "/service-user/user/info", String.class);
         return "===call user response(" + info + ")";
     }
 
     @Override
     public String system() {
+        System.out.println(path + "/service-user/system/info");
         String info = restTemplate.getForObject(path + "/service-system/system/info", String.class);
         return "===call system response(" + info + ")";
     }
