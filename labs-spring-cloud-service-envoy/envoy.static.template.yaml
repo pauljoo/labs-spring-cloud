@@ -29,21 +29,21 @@ static_resources:
                   prefix: "/service-system"
                 route:
                   prefix_rewrite: "/"
-                  cluster: labs_spring_cloud_service_system
+                  cluster: labs-spring-cloud-service-system
               - match:
                   prefix: "/service-user"
                 route:
                   prefix_rewrite: "/"
-                  cluster: labs_spring_cloud_service_user
+                  cluster: labs-spring-cloud-service-user
           http_filters:
           - name: envoy.router
   clusters:
-  - name: labs_spring_cloud_service_user
+  - name: labs-spring-cloud-service-user
     connect_timeout: 0.25s
     type: static
     lb_policy: ROUND_ROBIN
     load_assignment:
-      cluster_name: labs_spring_cloud_service_user
+      cluster_name: labs-spring-cloud-service-user
       endpoints:
       - lb_endpoints:
         - endpoint:
@@ -51,12 +51,12 @@ static_resources:
               socket_address:
                 address: 10.0.2.15
                 port_value: 25000
-  - name: labs_spring_cloud_service_system
+  - name: labs-spring-cloud-service-system
     connect_timeout: 0.25s
     type: static
     lb_policy: ROUND_ROBIN
     load_assignment:
-      cluster_name: labs_spring_cloud_service_system
+      cluster_name: labs-spring-cloud-service-system
       endpoints:
       - lb_endpoints:
         - endpoint:
