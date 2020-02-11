@@ -37,12 +37,12 @@ cd /data/dockerfile/labs-spring-cloud-service-envoy
 \cp -f /root/labs-spring-cloud/labs-spring-cloud-service-envoy/target/labs-spring-cloud-service-envoy.jar /data/dockerfile/labs-spring-cloud-service-envoy
 docker build -t xpanda/labs-spring-cloud-service-envoy:latest .
 
-mkdir -p /data/dockerfile/labs-spring-cloud-service-xds
-cd /data/dockerfile/labs-spring-cloud-service-xds
-\cp -f /root/labs-spring-cloud/labs-spring-cloud-service-xds/client.xml /data/dockerfile/labs-spring-cloud-service-xds
-\cp -f /root/labs-spring-cloud/labs-spring-cloud-service-xds/Dockerfile /data/dockerfile/labs-spring-cloud-service-xds
-\cp -f /root/labs-spring-cloud/labs-spring-cloud-service-xds/target/labs-spring-cloud-service-xds.jar /data/dockerfile/labs-spring-cloud-service-xds
-docker build -t xpanda/labs-spring-cloud-service-xds:latest .
+mkdir -p /data/dockerfile/labs-spring-cloud-xds
+cd /data/dockerfile/labs-spring-cloud-xds
+\cp -f /root/labs-spring-cloud/labs-spring-cloud-xds/client.xml /data/dockerfile/labs-spring-cloud-xds
+\cp -f /root/labs-spring-cloud/labs-spring-cloud-xds/Dockerfile /data/dockerfile/labs-spring-cloud-xds
+\cp -f /root/labs-spring-cloud/labs-spring-cloud-xds/target/labs-spring-cloud-xds.jar /data/dockerfile/labs-spring-cloud-xds
+docker build -t xpanda/labs-spring-cloud-xds:latest .
 
 docker build -t xpanda/envoy:latest .
 
@@ -51,5 +51,5 @@ docker run -d --net host --name labs-spring-cloud-registry xpanda/labs-spring-cl
 docker run -d --net host --name labs-spring-cloud-service-system --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/labs-spring-cloud-service-system:latest
 docker run -d --net host --name labs-spring-cloud-service-user --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/labs-spring-cloud-service-user:latest
 docker run -d --net host --name labs-spring-cloud-service-envoy --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/labs-spring-cloud-service-envoy:latest
-docker run -d --net host --name labs-spring-cloud-service-xds --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/labs-spring-cloud-service-xds:latest
+docker run -d --net host --name labs-spring-cloud-xds --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/labs-spring-cloud-xds:latest
 docker run -d --net host --name envoy --add-host labs-spring-cloud-registry:10.0.2.15 xpanda/envoy:latest
