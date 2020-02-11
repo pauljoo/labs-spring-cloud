@@ -37,18 +37,18 @@ static_resources:
           - name: envoy.router
   clusters:
   - name: labs_spring_cloud_service_user
-      connect_timeout: 0.25s
-      type: static
-      lb_policy: ROUND_ROBIN
-      load_assignment:
-        cluster_name: labs_spring_cloud_service_user
-        endpoints:
-        - lb_endpoints:
-          - endpoint:
-              address:
-                socket_address:
-                  address: 10.0.2.15
-                  port_value: 25000
+    connect_timeout: 0.25s
+    type: static
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: labs_spring_cloud_service_user
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 10.0.2.15
+                port_value: 25000
   - name: labs_spring_cloud_service_system
     connect_timeout: 0.25s
     type: static
