@@ -1,7 +1,7 @@
 package info.xpanda.labs.spring.cloud.xds.controller;
 
 import com.google.protobuf.Any;
-import com.googlecode.protobuf.format.JsonFormat;
+import com.google.protobuf.util.JsonFormat;
 import io.envoyproxy.envoy.api.v2.DiscoveryRequest;
 import io.envoyproxy.envoy.api.v2.DiscoveryResponse;
 import io.envoyproxy.envoy.api.v2.Listener;
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class ListenerController {
     @RequestMapping("/v2/discovery:listeners")
-    public String discovery(DiscoveryRequest request) {
+    public String discovery(DiscoveryRequest request) throws Exception{
         RouteMatch routeMatch1 = RouteMatch.newBuilder()
                 .setPrefix("/service-system")
                 .build();
@@ -93,6 +93,14 @@ public class ListenerController {
                 .addResources(Any.pack(listener))
                 .build();
 
-        return JsonFormat.printToString(response);
+        // 可以为 TypeRegistry 添加多个不同的Descriptor
+        JsonFormat.TypeRegistry typeRegistry = JsonFormat.TypeRegistry.newBuilder()
+                .add(Listener.getDescriptor())
+                .add(HttpConnectionManager.getDescriptor())
+                .build();
+        // usingTypeRegistry 方法会重新构建一个Printer
+        JsonFormat.Printer printer = JsonFormat.printer()
+                .usingTypeRegistry(typeRegistry);
+        return printer.print(response);
     }
 }
