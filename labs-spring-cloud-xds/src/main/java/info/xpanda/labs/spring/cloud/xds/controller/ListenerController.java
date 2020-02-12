@@ -70,6 +70,7 @@ public class ListenerController {
         HttpConnectionManager connectionManager = HttpConnectionManager.newBuilder()
                 .setRouteConfig(routeConfiguration)
                 .addHttpFilters(httpFilter)
+                .setStatPrefix("ingress_http")
                 .build();
 
         Filter filter = Filter.newBuilder()
