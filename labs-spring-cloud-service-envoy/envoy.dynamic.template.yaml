@@ -19,3 +19,29 @@ static_resources:
       type: STATIC
       lb_policy: ROUND_ROBIN
       hosts: [{ socket_address: { address: 127.0.0.1, port_value: 9090 }}]
+    - name: labs-spring-cloud-service-user
+      connect_timeout: 0.25s
+      type: static
+      lb_policy: ROUND_ROBIN
+      load_assignment:
+        cluster_name: labs-spring-cloud-service-user
+        endpoints:
+        - lb_endpoints:
+          - endpoint:
+              address:
+                socket_address:
+                  address: 10.0.2.15
+                  port_value: 25000
+    - name: labs-spring-cloud-service-system
+      connect_timeout: 0.25s
+      type: static
+      lb_policy: ROUND_ROBIN
+      load_assignment:
+        cluster_name: labs-spring-cloud-service-system
+        endpoints:
+        - lb_endpoints:
+          - endpoint:
+              address:
+                socket_address:
+                  address: 10.0.2.15
+                  port_value: 25001

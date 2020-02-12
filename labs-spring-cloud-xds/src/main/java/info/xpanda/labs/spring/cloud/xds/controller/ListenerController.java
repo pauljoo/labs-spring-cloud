@@ -42,11 +42,11 @@ public class ListenerController {
                 .build();
 
         RouteMatch routeMatch2 = RouteMatch.newBuilder()
-                .setPrefix("/service-system")
+                .setPrefix("/service-user")
                 .build();
         RouteAction routeAction2 = RouteAction.newBuilder()
                 .setPrefixRewrite("/")
-                .setCluster("labs-spring-cloud-service-system")
+                .setCluster("labs-spring-cloud-service-user")
                 .build();
         Route route2 = Route.newBuilder()
                 .setMatch(routeMatch2)
