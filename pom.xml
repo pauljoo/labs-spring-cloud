@@ -21,6 +21,7 @@
         <module>labs-spring-cloud-plugin-user-noop-ext</module>
         <module>labs-spring-cloud-service-envoy</module>
         <module>labs-spring-cloud-xds</module>
+        <module>labs-spring-cloud-xds-grpc</module>
     </modules>
 
     <build>

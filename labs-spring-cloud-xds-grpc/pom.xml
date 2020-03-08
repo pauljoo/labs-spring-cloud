@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>labs-spring-cloud-xds</artifactId>
+    <artifactId>labs-spring-cloud-xds-grpc</artifactId>
 
     <dependencies>
         <dependency>
@@ -20,6 +20,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.22.1</version>
         </dependency>
 
         <dependency>
@@ -36,7 +42,7 @@
         <dependency>
             <groupId>io.envoyproxy.controlplane</groupId>
             <artifactId>api</artifactId>
-            <version>0.1.22</version>
+            <version>0.1.21</version>
         </dependency>
 
         <dependency>
@@ -47,7 +53,7 @@
     </dependencies>
 
     <build>
-        <finalName>labs-spring-cloud-xds</finalName>
+        <finalName>labs-spring-cloud-xds-grpc</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -55,4 +61,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
